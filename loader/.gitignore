@@ -1,0 +1,39 @@
+# tests
+test/data/test.png
+tmp
+
+# dists
+dist/*
+**/dist/*
+dist.js
+dist.min.js
+
+# lock files
+package-lock.json
+*/**/package-lock.json
+examples/**/yarn.lock
+
+
+.reify-cache
+.nyc_output/
+coverage/
+node_modules/
+npm-debug.log
+stats.json
+yarn-error.log
+
+# Misc files
+*.zip
+*.rar
+*.log
+
+# editor files
+.idea
+.project
+.DS_Store
+.vscode
+*.iml
+*.swp
+
+# local data
+data/**

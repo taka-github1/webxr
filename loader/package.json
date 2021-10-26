@@ -1,0 +1,72 @@
+{
+  "name": "loaders.gl",
+  "description": "Framework-independent loaders for visualization, 3D graphics and geospatial formats",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visgl/loaders.gl"
+  },
+  "keywords": [
+    "webgl",
+    "loader",
+    "3d",
+    "point cloud",
+    "GLB",
+    "OBJ",
+    "PLY",
+    "LAZ",
+    "PCD",
+    "KML"
+  ],
+  "workspaces": [
+    "examples/website/textures",
+    "modules/*"
+  ],
+  "scripts": {
+    "bootstrap": "yarn install-fast && ocular-bootstrap",
+    "install-fast": "PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true yarn",
+    "start": "echo 'Please see loaders.gl website for how to run examples' && open https://loaders.gl/docs",
+    "build": "ocular-clean && lerna run pre-build && ocular-build --dist esm && lerna run post-build",
+    "build-workers": "lerna run pre-build",
+    "clean": "ocular-clean",
+    "cover": "ocular-test cover",
+    "lint": "tsc && ocular-lint",
+    "bump": "ocular-bump",
+    "publish": "ocular-publish",
+    "test": "ocular-test",
+    "metrics": "./scripts/metrics.sh && ocular-metrics",
+    "version": "yarn build",
+    "pre-commit": "yarn lint",
+    "pre-push": "yarn lint"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.14.5",
+    "@deck.gl/core": "^8.5.0",
+    "@luma.gl/core": "^8.5.4",
+    "@luma.gl/debug": "^8.5.4",
+    "@luma.gl/test-utils": "^8.5.4",
+    "@probe.gl/bench": "^3.4.0",
+    "@probe.gl/test-utils": "^3.4.0",
+    "@types/tape-promise": "^4.0.1",
+    "base64-inline-loader": "^1.1.1",
+    "base64-loader": "^1.0.0",
+    "coveralls": "^3.0.3",
+    "esbuild": "^0.13.4",
+    "ocular-dev-tools": "1.0.0-alpha.7",
+    "pre-commit": "^1.2.2",
+    "pre-push": "^0.1.1"
+  },
+  "pre-commit": "pre-commit",
+  "pre-push": "pre-push",
+  "dependencies": {},
+  "resolutions_notes": [
+    "Note: tape 4.12 and higher no longer compares 0 and -0 equally...",
+    "Note: newer prettier breaks on typescript import type"
+  ],
+  "resolutions": {
+    "tape": "4.11.0",
+    "prettier": "2.3.1",
+    "typescript": "^4.3.5"
+  }
+}

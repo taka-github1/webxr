@@ -1,0 +1,42 @@
+{
+  "name": "@loaders.gl/geotiff",
+  "version": "3.1.0-alpha.4",
+  "description": "Framework-independent loaders for tiff and geotiff",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visgl/loaders.gl"
+  },
+  "keywords": [
+    "webgl",
+    "loader",
+    "3d",
+    "texture",
+    "tiff",
+    "geotiff"
+  ],
+  "types": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "sideEffects": false,
+  "files": [
+    "src",
+    "dist",
+    "bin",
+    "README.md"
+  ],
+  "scripts": {
+    "pre-build": "npm run build-bundle",
+    "build-bundle": "webpack --display=minimal --config ../../scripts/webpack/bundle.js"
+  },
+  "dependencies-disabled": {
+    "geotiff": "ilan-gold/geotiff.js#ilan-gold/viv_094"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^3.16.0",
+    "geotiff": "^1.0.4"
+  }
+}

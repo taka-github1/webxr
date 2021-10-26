@@ -1,0 +1,39 @@
+{
+  "name": "@loaders.gl/video",
+  "version": "3.1.0-alpha.4",
+  "description": "Framework-independent loaders and writers for video (MP4, WEBM, ...)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visgl/loaders.gl"
+  },
+  "keywords": [
+    "webgl",
+    "loader",
+    "3d",
+    "mesh",
+    "point cloud",
+    "PLY"
+  ],
+  "types": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "sideEffects": false,
+  "files": [
+    "src",
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "pre-build": "npm run build-bundle",
+    "build-bundle": "esbuild src/bundle.ts --bundle --outfile=dist/bundle.js"
+  },
+  "dependencies": {
+    "@loaders.gl/loader-utils": "3.1.0-alpha.4",
+    "@loaders.gl/worker-utils": "3.1.0-alpha.4",
+    "gifshot": "^0.4.5"
+  }
+}

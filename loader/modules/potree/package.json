@@ -1,0 +1,41 @@
+{
+  "name": "@loaders.gl/potree",
+  "version": "3.1.0-alpha.4",
+  "description": "potree loaders for large point clouds.",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visgl/loaders.gl"
+  },
+  "keywords": [
+    "webgl",
+    "loader",
+    "potree",
+    "3d tile",
+    "tile",
+    "mesh",
+    "las",
+    "point cloud",
+    "pointcloud"
+  ],
+  "types": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "sideEffects": false,
+  "files": [
+    "src",
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "pre-build": "npm run build-bundle",
+    "build-bundle": "esbuild src/bundle.ts --bundle --outfile=dist/bundle.js"
+  },
+  "dependencies": {
+    "@loaders.gl/math": "3.1.0-alpha.4",
+    "@math.gl/core": "^3.5.1"
+  }
+}

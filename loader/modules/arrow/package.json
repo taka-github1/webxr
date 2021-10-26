@@ -1,0 +1,46 @@
+{
+  "name": "@loaders.gl/arrow",
+  "version": "3.1.0-alpha.4",
+  "description": "Simple columnar table loader for the Apache Arrow format",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visgl/loaders.gl"
+  },
+  "keywords": [
+    "webgl",
+    "loader",
+    "3d",
+    "mesh",
+    "point cloud",
+    "PLY"
+  ],
+  "types": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "sideEffects": false,
+  "files": [
+    "src",
+    "dist",
+    "README.md"
+  ],
+  "browser": {
+    "fs": false
+  },
+  "scripts": {
+    "pre-build": "npm run build-worker && npm run build-bundle",
+    "build-bundle": "esbuild src/bundle.ts --bundle --outfile=dist/bundle.js",
+    "build-worker": "esbuild src/workers/arrow-worker.ts --bundle --outfile=dist/arrow-worker.js"
+  },
+  "dependencies": {
+    "@loaders.gl/loader-utils": "3.1.0-alpha.4",
+    "@loaders.gl/schema": "3.1.0-alpha.4",
+    "apache-arrow": "^4.0.0"
+  },
+  "peerDependencies": {
+    "@loaders.gl/core": "^3.0.0"
+  }
+}

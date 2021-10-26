@@ -1,0 +1,35 @@
+{
+  "name": "@loaders.gl/zarr",
+  "version": "3.1.0-alpha.4",
+  "description": "Framework-independent loaders for Zarr",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visgl/loaders.gl"
+  },
+  "keywords": [
+    "webgl",
+    "loader",
+    "zarr"
+  ],
+  "types": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "sideEffects": false,
+  "files": [
+    "src",
+    "dist",
+    "bin",
+    "README.md"
+  ],
+  "scripts": {
+    "pre-build": "npm run build-bundle",
+    "build-bundle": "esbuild src/bundle.ts --bundle --outfile=dist/bundle.js"
+  },
+  "dependencies": {
+    "zarr": "^0.5.0"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "@loaders.gl/kml",
+  "version": "3.1.0-alpha.4",
+  "description": "Framework-independent loader for the KML format",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visgl/loaders.gl"
+  },
+  "keywords": [
+    "webgl",
+    "loader",
+    "3d",
+    "mesh",
+    "point cloud",
+    "KML"
+  ],
+  "types": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "sideEffects": false,
+  "files": [
+    "src",
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "pre-build": "npm run build-bundle",
+    "build-bundle": "esbuild src/bundle.ts --bundle --outfile=dist/bundle.js"
+  },
+  "dependencies": {
+    "@loaders.gl/gis": "3.1.0-alpha.4",
+    "@loaders.gl/loader-utils": "3.1.0-alpha.4",
+    "@loaders.gl/schema": "3.1.0-alpha.4",
+    "@tmcw/togeojson": "^4.5.0"
+  },
+  "peerDependencies": {
+    "@loaders.gl/core": "^3.0.0"
+  }
+}
